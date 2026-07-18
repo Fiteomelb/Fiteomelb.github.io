@@ -35,10 +35,10 @@ body {
   position: relative;
   height: 100%;
   display: flex;
-  justify-content: flex-end;   /* move to right */
-  align-items: center;         /* keep vertical center */
-  text-align: right;
-  padding-right: 60px;
+  justify-content: center;   /* centered by default */
+  align-items: center;       /* keep vertical center */
+  text-align: center;
+  padding: 20px;
   color: white;
 }
 
@@ -71,12 +71,25 @@ a:hover {
   opacity: 0.8;
 }
 
+/* Desktop: right-aligned */
+@media (min-width: 769px) {
+  .content {
+    justify-content: flex-end;
+    text-align: right;
+    padding-right: 60px;
+  }
+
+  p {
+    max-width: 400px;
+  }
+}
+
+/* Mobile: centered */
 @media (max-width: 768px) {
   .content {
     justify-content: center;
-    padding-right: 20px;
     text-align: center;
-    color: white;
+    padding: 20px;
   }
 
   p {
@@ -97,10 +110,10 @@ a:hover {
   }
 
   .content {
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    padding-right: 30px;
-    text-align: right;
+    padding: 20px;
+    text-align: center;
   }
 }
 
